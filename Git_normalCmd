@@ -1,0 +1,32 @@
+   
+ 
+Git
+1、配置Git的Github用户名与邮箱   
+   git config --global user.name "yourname"
+   git config --global user.email "email@example.com"
+
+2、对邮箱生成SSH Key加入到Github
+
+   ssh-keygen -t rsa -C "email@example.com"  这个命令生成id_rsa与id_rsa.pub
+   
+   将id_rsa.pub中的内容粘贴到Github中
+      
+3、git init 在当前目录创建一个Git本地库
+
+4、git add [filename] 将工作去的修改添加到缓存区
+
+5、git commit -m "message" 将缓存区的代码提交到本地库
+
+6、git remote add origin git@github.com:michaelliao/learngit.git
+   添加远程库到本地库
+
+7、第一次推送
+   git push -u origin master
+       由于远程库是空的，我们第一次推送master分支时，加上了-u参数，
+   Git不但会把本地的master分支内容推送的远程新的master分支，还会把
+   本地的master分支和远程的master分支关联起来，在以后的推送或者拉取
+   时就可以简化命令。
+
+   后面的推送
+       git push origin master
+    
