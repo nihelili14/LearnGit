@@ -40,8 +40,15 @@ Git
     git clone git@github.com:michaelliao/learngit.git
 
 9、创建分支
-   git checkout -b [分支名称]
+   ① git checkout -b [分支名称]
    创建一个分支并切换到该分支
+   
+   推荐使用switch
+   ②git switch -c [分支名称]
+   创建并切换到该分支
+
+    git switch [分支名称]
+   直接切换到已有的分支 
 
    git branch
    查看分支，在分支前面有*号的表示当前处于该分支
@@ -55,8 +62,6 @@ Git
 
 11、删除分支
     git branch -d [分支名称]
-
-
 
 
 
