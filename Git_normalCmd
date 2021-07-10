@@ -18,7 +18,13 @@ Git
 5、git commit -m "message" 将缓存区的代码提交到本地库
 
 6、git remote add origin git@github.com:michaelliao/learngit.git
-   添加远程库到本地库
+   将远程库关联到本地库
+
+   git remote rm [库的名字]
+   删除本地库与远程库的关联
+
+   git remote -v
+   查看远程库的版本
 
 7、第一次推送
    git push -u origin master
@@ -29,4 +35,23 @@ Git
 
    后面的推送
        git push origin master
-    
+
+8、克隆远程仓库到本地库
+    git clone git@github.com:michaelliao/learngit.git
+
+9、创建分支
+   git checkout -b [分支名称]
+   创建一个分支并切换到该分支
+
+   git branch
+   查看分支，在分支前面有*号的表示当前处于该分支
+
+10、合并分支
+   ①在分支上完成修改后git add和git commit提交到本地库
+
+   ②切换回主分支master
+    执行git merge [分支名称]
+    合并提交的分支到主分支
+
+
+
