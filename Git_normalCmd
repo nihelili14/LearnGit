@@ -63,6 +63,40 @@ Git
 11、删除分支
     git branch -d [分支名称]
 
+12、解决分支提交冲突
+        当两个分支修改一个文件的同一个位置并提交后，合并分支
+    时会产生冲突，需要修改冲突部分。在冲突文件中git会自动添加
+    冲突部分的提示，将这个部分修改后就解决冲突。
 
+13、分支管理策略
+    
+    合并分支时，为了保留分支信息，在合并时加入--no-ff -m [提交信息]
+    表示禁用Fast forword然后做一次新的提交
+    如：git mergr dev --no-ff -m [提交信息]
+    这样分支信息就能得以保存
 
+    master分支应当当做版本发布用，干活时应当在其他分支上
 
+14、bug分支
+    当在自己的分支上干活时，突然接收到修改bug的任务，但自己的任务还没完成
+    且提交，即在工作区中还在干活，这就需要将工作区暂时保存起来。
+    ① git stash					将当前工作区储存起来
+    
+    ② git swtich main				回到主分支
+      git switch -c issue001  			创建临时分支
+    
+    ③ git add [文件]				
+      git commit [文件] -m "BUG修改信息"	提交修改好的文件
+    
+    ④ git switch main				回到主分支
+      git merge issue001 --no-ff -m ""          合并BUG分支
+    
+    ⑤ git branch -d [临时分支（BUG分支）]       删除临时分支
+    
+    ⑥ git switch dev                            回到dev分支
+      git stash list                            查看储存列表
+      git stash pop              		恢复工作区并删除储存信息
+      git stash apply stash@{n}  		恢复指定版本工作区
+    
+    ⑦ 继续工作...
+ 
