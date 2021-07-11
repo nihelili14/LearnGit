@@ -1,1 +1,5 @@
-this is main edit:2.
+<<<<<<< HEAD
+this is fix edit:3.
+=======
+this is fix edit:3.
+>>>>>>> laptop
