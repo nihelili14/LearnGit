@@ -1,6 +1,6 @@
-   
- 
+
 Git
+
 1、配置Git的Github用户名与邮箱   
    git config --global user.name "yourname"
    git config --global user.email "email@example.com"
@@ -100,3 +100,11 @@ Git
     
     ⑦ 继续工作...
  
+15、Feature分支
+		开发时添加新功能最好新建一个Feature分支，在该分支上完成开发，完成后
+ 	合并，最后再删除这个Feature分支。
+		如果因为某些原因不需要在自己分支上合并时，需要删除这个Feature分支
+	则：git branch -D [分支名称]
+	    -D 参数表示强制删除，在没有合并的时候是不能正常删除的。
+
+
